@@ -10,8 +10,8 @@ Test 'Which' do
       
       Step 'Checks check box "Screen Size" 17-22"' do
         # find('li', :text => '17-22"').click
-        # find(:xpath, "/html/body/div[4]/div/div[1]/div/div/form/aside/section[1]/ul/li[1]/label/div").click   
-        find(:xpath, ".//*[@id='screen_size_17_22/section[1]/ul/li[1]/label/div']").click     
+        find(:xpath, "/html/body/div[4]/div/div[1]/div/div/form/aside/section[1]/ul/li[1]/label/div").click   
+        # find(:xpath, ".//*[@id='screen_size_17_22/section[1]/ul/li[1]/label/div']").click     
       end 
       
       Step 'Choose min price from option list' do
