@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara'
 require 'rspec'
+require 'capybara/dsl'
 
 require_relative '../helpers/test_helper_spec'
 

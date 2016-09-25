@@ -1,7 +1,7 @@
 require_relative '../../spec/spec_helper'
 Test 'Which' do
 
-  Scenario 'Testing' do
+  Scenario 'Test test' do
     Which "Begin" do
       
       Step 'Go to home page' do
@@ -9,14 +9,12 @@ Test 'Which' do
       end
       
       Step 'Checks check box "Screen Size" 17-22"' do
-        # find('li', :text => '17-22"').click
-        find(:xpath, "/html/body/div[4]/div/div[1]/div/div/form/aside/section[1]/ul/li[1]/label/div").click   
-        # find(:xpath, ".//*[@id='screen_size_17_22/section[1]/ul/li[1]/label/div']").click     
+        find(:css, 'label[for="screen_size_17_23"]').click 
       end 
       
       Step 'Choose min price from option list' do
        find(:xpath, ".//*[@id='from']").click
-       find(:xpath, ".//*[@id='from']/option[2]").click
+       find(:xpath, ".//*[@id='from']/option[7]").click
       end 
       
       Step 'Choose max price from option list' do
@@ -24,25 +22,22 @@ Test 'Which' do
        find(:xpath, ".//*[@id='to']/option[14]").click
       end 
       
-      # Step 'Checks check box "Screen Size" 17-22"' do
-        # find('li', :text => '17-22"').click
-      # end 
-      
+      Step 'Validate check box "Screen Size" 17-22" is checked' do
+        find(:css, 'label[for="brands_samsung"]')
+      end 
+     
       Step 'Checks check box Samsung' do
-        find(:xpath, "/html/body/div[4]/div/div[1]/div/div/form/aside/section[4]/ul/li[1]/label/div/span/span[1]").click
+        find(:css, 'label[for="brands_samsung"]').click 
+      end 
+      
+      
+      Step 'Validate that there are listed items' do
+        assert_selector('li._3M9TC', :minimum => 1)
+        #expect(find('ul.p3lYM')).to have_selector('li', count: 6)
       end 
 #       
-      # Step 'Validate check box "Screen Size" 17-22" is checked' do
-        # if has_checked_field?('li', :text => '17-22"') == false
-          # puts"ok"
-        # else
-          # puts "not ok"
-        # end        
-      # end 
-#       
-      # Step 'Check check box "Screen Size" 24-32"' do
-        # find('li', :text => '24-32"')
-        # find('li', :text => '24-32"').click
+      # Step 'Check check box "Screen Size" 24-33"' do
+        # find(:css, 'label[for="screen_size_24_33"]').click
       # end   
 #          
       # Step 'Validate check box "Screen Size" 24-32" is checked' do
@@ -56,11 +51,7 @@ Test 'Which' do
           # puts "not ok"
         # end 
       # end 
-#       
-      # Step 'Uncheck check box "Screen Size" 17-22"' do
-       # find('._1D9wd ztPan').find(:xpath, 'option[3]').select_option
-      # end 
-           
+         
       
     end
   end
