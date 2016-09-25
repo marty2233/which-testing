@@ -116,6 +116,8 @@ RSpec.configure do |config|
   config.include Which
 
 end
+
+#Chrome web browser
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
