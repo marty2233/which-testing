@@ -1,7 +1,7 @@
 require_relative '../../spec/spec_helper'
 Test 'Which' do
 
-  Scenario 'Should sort all TV by Price high to low from range £600 to £1600' do
+  Scenario 'Should sort all TV by Price high to low with range £600 to £1600' do
     Which "Begin" do
 
       Step 'Go to home page' do
@@ -28,7 +28,7 @@ Test 'Which' do
         show_television_reviews
       end
          
-      Step 'Show the highest price from range £600 to £1600' do
+      Step 'Show first TV with highest price with range £600 to £1600' do
         print find(:xpath, '/html/body/div[4]/div/div[1]/div/main/div[3]/ul/li[1]/div/a/div[5]/p[2]').text
       end
 

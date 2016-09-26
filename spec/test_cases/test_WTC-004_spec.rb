@@ -12,7 +12,7 @@ Test 'Which' do
         validate_homepage_url
       end
       
-      Step 'Click on check box popular_screen_sizes_32 ' do
+      Step 'Click on check box Popular Screen sizes 32" ' do
         find(:css, 'label[for="popular_screen_sizes_32-inch"]').click
       end      
       
