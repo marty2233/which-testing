@@ -12,12 +12,24 @@ Test 'Which' do
         validate_homepage_url
       end
 
-      Step 'Click on check box "Screen Size" 17-23"' do
-        find(:css, 'label[for="screen_size_17_23"]').click
+      Step 'Validate if check box " 17-23" " from Screen size filter exists' do
+        assert_selector(:css, 'label[for="screen_size_17_23"]')
       end
 
-      Step 'Click on check box "Samsung" from brands' do
+      Step 'Click on check box " 17-23" " from Screen size filter' do
+        find(:css, 'label[for="screen_size_17_23"]').click
+      end
+      
+      Step 'Validate if check box "Samsung" from Brands filter exists' do
+        assert_selector(:css, 'label[for="screen_size_17_23"]')
+      end
+
+      Step 'Click on check box "Samsung" from Brands filter' do
         find(:css, 'label[for="brands_samsung"]').click
+      end
+
+      Step 'Validate that there are listed TV' do
+        assert_selector('li._3M9TC', :minimum => 1)
       end
 
       Step 'Show television reviews.' do
